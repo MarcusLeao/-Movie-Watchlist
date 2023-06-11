@@ -16,7 +16,7 @@ export const Watchlist = () => {
         </div>
 
         {watchlist.length > 0 ? (
-          <div className='grid grid-cols-[repeat(3,200px)] gap-7 '>
+          <div className='grid grid-cols-[repeat(6,200px)] gap-7 '>
             {watchlist.map(movie => (
               <MovieCard movie={movie} type="watchlist" />
             ))}

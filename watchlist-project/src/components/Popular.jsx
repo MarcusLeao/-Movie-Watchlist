@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ResultCard } from './ResultCard';
 import { MovieCard } from './MovieCard'
+
 
 
 export const Popular = () => {
@@ -16,8 +17,7 @@ export const Popular = () => {
         }
     };
 
-    const getMovies = () => {
-
+    useEffect(() => {
         const url = 'https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1&region=BR';
 
         fetch(url, options)
@@ -29,13 +29,17 @@ export const Popular = () => {
                     setResults([]);
                 }
             });
-    }
+
+
+    }, [])
+
+
     return (
         <div>
             <div className="mx-auto px-4">
                 <h1 className='text-black text-5xl text-center font-bold'>Most Popular Movies</h1>
                 <div className="pt-12 mx-40 max-w-xl">
-                    <script>{getMovies()}</script>
+
                     {results.length > 0 && (
                         <div className='grid grid-cols-[repeat(5,200px)] gap-7 '>
                             {results.map(movie => (
