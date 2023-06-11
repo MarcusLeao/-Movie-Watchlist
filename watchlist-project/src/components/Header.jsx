@@ -25,7 +25,7 @@ export const Header = () => {
 
           <ul className="p-0 m-0 list-none flex items-center">
             <li className="inline-block mr-7 last:mr-0">
-              <Link className="text-white text-xl no-underline transition-all duration-300 ease-linear hover:opacity-70" to="/">Watch List</Link>
+              <Link className="text-white text-xl no-underline transition-all duration-300 ease-linear hover:opacity-70" to="/watchlist">Watchlist</Link>
             </li>
 
             <li className="inline-block mr-7 last:mr-0">

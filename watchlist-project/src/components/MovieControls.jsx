@@ -44,6 +44,21 @@ export const MovieControls = ({ movie, type }) => {
           </button>
         </>
       )}
+      {type === "popular" && (
+        <>
+          <button className="text-white bg-transparent border-none transition-all duration-300 ease-linear text-xl p-1.5 m-0 hover:text-lime-500 hover:cursor-pointer"
+            onClick={() => moveToWatchlist(movie)}>
+            <i className="fa-fw far fa-heart"></i>
+          </button>
+
+          <button
+            className="text-white bg-transparent border-none transition-all duration-300 ease-linear text-xl p-1.5 m-0 hover:text-lime-500 hover:cursor-pointer"
+            onClick={() => addMovieToWatched(movie.id)}
+          >
+            <i className="fa-fw fa fa-eye"></i>
+          </button>
+        </>
+      )}
 
     </div>
   )
