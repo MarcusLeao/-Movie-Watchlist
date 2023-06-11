@@ -5,7 +5,7 @@ import { Navbar } from "flowbite-react";
 export const Header = () => {
   return (
     <header className="bg-sky-950 ">
-      <div className="container">
+      <div className="mx-auto px-4">
         <div className="flex justify-between items-center py-2.5">
         <Navbar.Brand
         onClick={() => navigate("/")}

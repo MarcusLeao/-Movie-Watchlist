@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { ResultCard } from './ResultCard';
 
 
 export const Add = () => {
@@ -34,17 +35,28 @@ export const Add = () => {
     });
   }
   return (
-    <div className="add-page">
-      <div className="container">
-        <div className="add-content">
-          <div className='input-wrapper'>
-            <input 
+    <div>
+      <div className="mx-auto px-4">
+        <div className="pt-12 m-auto max-w-xl">
+          <div>
+            <input className="bg-sky-950 w-full py-2 rounded-md border-none text-white text-xl"
               type="text"
               placeholder="Search for a movie"
               value={query}
               onChange={onChange} 
             />
           </div>
+
+          {results.length>0 &&(
+            <ul className="results">
+              {results.map((movie)=>(
+                <li key={movie.id}>
+                  <ResultCard movie={movie}/>                 
+                </li>
+              ))}
+            </ul>
+          )}
+
         </div>
       </div>        
     </div>
