@@ -1,7 +1,7 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
 
-export const MovieControls = ({movie, type}) => {
+export const MovieControls = ({ movie, type }) => {
   const {
     removeMovieFromWatchlist,
     addMovieToWatched,
@@ -10,33 +10,34 @@ export const MovieControls = ({movie, type}) => {
   } = useContext(GlobalContext);
 
   return (
-    <div className="inner-card-controls">
+    <div className="inline bg-red-500 absolute bottom-5 left-2/4 -translate-x-1/2 bg-opacity-80 rounded-md p-1 opacity-0 transition-all duration-300 ease-linear hover:opacity-100">
 
-    {type === "watchlist" && (
-      <>
-        <button className="ctrl-btn" 
-        onClick={() => addMovieToWatched(movie)}
-        >
-          <i className="fa-fw far fa-eye"></i>
-        </button>
-
-        <button
-          className="ctrl-btn"
-          onClick={() => removeMovieFromWatchlist(movie.id)}
-        >
-          <i className="fa-fw fa fa-times"></i>
-        </button>
-      </>
-    )}
-
-    {type === "watched" && (
+      {type === "watchlist" && (
         <>
-          <button className="ctrl-btn" onClick={() => moveToWatchlist(movie)}>
+          <button className="text-white bg-transparent border-none transition-all duration-300 ease-linear text-xl p-1.5 m-0 hover:text-lime-500 hover:cursor-pointer"
+            onClick={() => addMovieToWatched(movie)}
+          >
+            <i className="fa-fw far fa-eye"></i>
+          </button>
+
+          <button
+            className="text-white bg-transparent border-none transition-all duration-300 ease-linear text-xl p-1.5 m-0 hover:text-lime-500 hover:cursor-pointer"
+            onClick={() => removeMovieFromWatchlist(movie.id)}
+          >
+            <i className="fa-fw fa fa-times"></i>
+          </button>
+        </>
+      )}
+
+      {type === "watched" && (
+        <>
+          <button className="text-white bg-transparent border-none transition-all duration-300 ease-linear text-xl p-1.5 m-0 hover:text-lime-500 hover:cursor-pointer"
+            onClick={() => moveToWatchlist(movie)}>
             <i className="fa-fw far fa-eye-slash"></i>
           </button>
 
           <button
-            className="ctrl-btn"
+            className="text-white bg-transparent border-none transition-all duration-300 ease-linear text-xl p-1.5 m-0 hover:text-lime-500 hover:cursor-pointer"
             onClick={() => removeFromWatched(movie.id)}
           >
             <i className="fa-fw fa fa-times"></i>
@@ -44,6 +45,6 @@ export const MovieControls = ({movie, type}) => {
         </>
       )}
 
-  </div>
+    </div>
   )
 }

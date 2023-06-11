@@ -7,27 +7,27 @@ export const Header = () => {
     <header className="bg-sky-950 ">
       <div className="mx-auto px-4">
         <div className="flex justify-between items-center py-2.5">
-        <Navbar.Brand
-        onClick={() => navigate("/")}
-        className="cursor-pointer"
-      >
-        <img
-          src="https://www.freepnglogos.com/uploads/film-reel-png/film-reel-home-feist-electronicsfeist-electronics-22.png"
-          className="mr-3 h-6 sm:h-9"
-          alt="MyWatchlist"
-          />
-        <span className="text-white text-xl no-underline transition-all duration-0 ease-linear hover:opacity-70">
-        MyWatchlist
-        </span>
-      </Navbar.Brand>
+          <Navbar.Brand
+            onClick={() => navigate("/")}
+            className="cursor-pointer"
+          >
+            <img
+              src="https://www.freepnglogos.com/uploads/film-reel-png/film-reel-home-feist-electronicsfeist-electronics-22.png"
+              className="mr-3 h-6 sm:h-9"
+              alt="MyWatchlist"
+            />
+            <span className="text-white text-xl no-underline transition-all duration-300 ease-linear hover:opacity-70">
+              MyWatchlist
+            </span>
+          </Navbar.Brand>
 
           <ul className="p-0 m-0 list-none flex items-center">
             <li className="inline-block mr-7 last:mr-0">
-              <Link className="text-white text-xl no-underline transition-all duration-0 ease-linear hover:opacity-70" to="/">Watch List</Link>
+              <Link className="text-white text-xl no-underline transition-all duration-300 ease-linear hover:opacity-70" to="/">Watch List</Link>
             </li>
 
             <li className="inline-block mr-7 last:mr-0">
-              <Link className="text-white text-xl no-underline transition-all duration-0 ease-linear hover:opacity-70" to="/watched">Watched</Link>
+              <Link className="text-white text-xl no-underline transition-all duration-300 ease-linear hover:opacity-70" to="/watched">Watched</Link>
             </li>
 
             <li className="inline-block mr-7 last:mr-0">

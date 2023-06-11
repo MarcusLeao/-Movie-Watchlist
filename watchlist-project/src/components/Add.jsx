@@ -5,7 +5,7 @@ import { ResultCard } from './ResultCard';
 export const Add = () => {
 
   const [query, setQuery] = useState("");
-  const [results,setResults] = useState([]);
+  const [results, setResults] = useState([]);
 
   const options = {
     method: 'GET',
@@ -15,24 +15,24 @@ export const Add = () => {
     }
   };
 
-  const onChange = (e)=>{
+  const onChange = (e) => {
     e.preventDefault();
 
     setQuery(e.target.value);
 
-    
+
 
     const url = `https://api.themoviedb.org/3/search/movie?query=${e.target.value}&include_adult=false&language=pt-BR`;
 
     fetch(url, options)
-    .then((res)=> res.json())
-    .then((data)=>{
-      if(!data.errors){
-        setResults(data.results)
-      }else{
-        setResults([]);
-      }
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.errors) {
+          setResults(data.results)
+        } else {
+          setResults([]);
+        }
+      });
   }
   return (
     <div>
@@ -43,22 +43,22 @@ export const Add = () => {
               type="text"
               placeholder="Search for a movie"
               value={query}
-              onChange={onChange} 
+              onChange={onChange}
             />
           </div>
 
-          {results.length>0 &&(
-            <ul className="results">
-              {results.map((movie)=>(
-                <li key={movie.id}>
-                  <ResultCard movie={movie}/>                 
+          {results.length > 0 && (
+            <ul className="p-0 m-0 mt-5">
+              {results.map((movie) => (
+                <li className="list-none" key={movie.id}>
+                  <ResultCard movie={movie} />
                 </li>
               ))}
             </ul>
           )}
 
         </div>
-      </div>        
+      </div>
     </div>
   )
 }
