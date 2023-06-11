@@ -17,7 +17,7 @@ export const Watched = () => {
         </div>
 
         {watched.length > 0 ? (
-          <div className="grid grid-cols-[repeat(3,1fr)] gap-7 ">
+          <div className="grid grid-cols-[repeat(3,200px)] gap-7 ">
             {watched.map((movie) => (
               <MovieCard movie={movie} key={movie.id} type="watched" />
             ))}

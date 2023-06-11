@@ -10,13 +10,13 @@ export const Watchlist = () => {
         <div className='flex items-center justify-between mb-7'>
           <h1 className='text-sky-950 m-0'>My Watchlist</h1>
 
-          <span className="block bg-green-600 py-1.5 px-4 text-lg font-semibold rounded-full text-sky-950">
+          <span className="block bg-green-400 py-1.5 px-4 text-lg font-semibold rounded-full text-sky-950">
             {watchlist.length} {watchlist.length === 1 ? "Movie" : "Movies"}
           </span>
         </div>
 
         {watchlist.length > 0 ? (
-          <div className='grid grid-cols-[repeat(3,1fr)] gap-7 '>
+          <div className='grid grid-cols-[repeat(3,200px)] gap-7 '>
             {watchlist.map(movie => (
               <MovieCard movie={movie} type="watchlist" />
             ))}
