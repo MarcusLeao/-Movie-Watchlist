@@ -6,7 +6,8 @@ import { Watched } from "./components/Watched";
 import { Add } from "./components/Add";
 import './App.css'
 import { GlobalProvider } from './context/GlobalState';
-//import "./lib/font-awesome/css/all.min.css";
+
+import "./lib/font-awesome/css/all.min.css";
 
 function App() {
   const [count, setCount] = useState(0)
