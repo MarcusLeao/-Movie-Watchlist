@@ -37,11 +37,11 @@ export const Popular = () => {
     return (
         <div>
             <div className="mx-auto px-4">
-                <h1 className='text-black text-5xl text-center font-bold'>Most Popular Movies</h1>
-                <div className="pt-12 mx-40 max-w-xl">
+                <h1 className='text-sky-950 text-5xl text-center font-bold'>Most Popular Movies</h1>
+                <div className="pt-12 mx-7 md:mx-16 xl:mx-40 max-w-xl">
 
                     {results.length > 0 && (
-                        <div className='grid grid-cols-[repeat(5,200px)] gap-7 '>
+                        <div className='grid grid-cols-[repeat(2,200px)] xl:grid-cols-[repeat(5,200px)] md:grid-cols-[repeat(3,200px)] gap-7 '>
                             {results.map(movie => (
                                 <MovieCard movie={movie} type="popular" />
                             ))}
